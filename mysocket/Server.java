@@ -18,8 +18,25 @@ public class Server {
 			out.write("Olá!!!!".getBytes());
 			out.flush();
 			int i = 0;
-			while  ((i = in.read()) != 27) {
-				System.out.println((char)i);
+			boolean sair = false;
+			while  (!sair) {
+				if(in.available() > 0 ) {
+					i = in.read();
+					System.out.println((char)i);
+					if (i == 27) {
+						sair = true;
+					}					
+				}
+				if(System.in.available() > 0 ) {
+					i = System.in.read();
+					out.write(i);
+					out.flush();
+					System.out.println((char)i);
+					if (i == 27) {
+						sair = true;
+					}					
+				}				
+
 			}
 			System.out.println("Cliente Desconectado");
 			System.out.println("Encerrando Servidor");
