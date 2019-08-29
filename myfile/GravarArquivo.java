@@ -7,11 +7,11 @@ import java.io.IOException;
 public class GravarArquivo {
 	public static void main(String[] args) {
 		try {
-			String path = "C:/Users/Laboratorio 201/Documents/teste.txt"; 
+			String path = "C:/nome.txt"; 
 			File f = new File(path);
 			FileWriter fw = new FileWriter(f);
-			fw.write("Hello Word");
-//			fw.flush();
+			fw.write("Augusto Rocha Nascimento");
+			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -8,7 +8,7 @@ public class LerArquivo {
 
 	public static void main(String[] args) {
 		try {
-			String path = "C:/Users/Laboratorio 201/Documents/teste.txt"; 
+			String path = "C:\\Windows\\Panther\\setupact.log"; 
 			File f = new File(path);
 			if (f.exists() && f.canRead()) {
 				FileReader fr = new FileReader(f);
@@ -19,9 +19,7 @@ public class LerArquivo {
 				fr.close();
 			}
 
-
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			System.out.println("Concluido");
